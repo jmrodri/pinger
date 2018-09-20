@@ -28,7 +28,7 @@ WORKDIR ${HOME}
 # BUILD BROKER SOURCE
 ######################
 
-COPY server /usr/bin/
+COPY server testfile /usr/bin/
 
 USER ${USER_UID}
 RUN sed "s@${USER_NAME}:x:${USER_UID}:@${USER_NAME}:x:\${USER_ID}:@g" /etc/passwd > ${BASE_DIR}/etc/passwd.template
